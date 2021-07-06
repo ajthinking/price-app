@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\DataStory\Controllers;
+namespace App\DataStory\Controllers;
 
 use Illuminate\Support\Facades\Route;
 

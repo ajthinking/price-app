@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\DataStory\Models;
+namespace App\DataStory\Models;
 
 use DataStory\Diagram;
 use Illuminate\Database\Eloquent\Collection;

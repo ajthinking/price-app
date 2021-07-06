@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\DataStory;
+namespace App\DataStory;
 
 use Illuminate\Support\ServiceProvider;
 
