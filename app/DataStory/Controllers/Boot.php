@@ -2,30 +2,25 @@
 
 namespace App\DataStory\Controllers;
 
-use DataStory\Diagram;
-use DataStory\Models\Story;
+use App\DataStory\DataStoryCli as DataStory;
 
 class Boot
 {
     public function __invoke()
     {
-        return [
-            'stories'         => Story::all(),
-            'capabilities'    => Diagram::capabilities(),
-            'serializedModel' => $this->getSerializedModel(),
-        ];        
+		return DataStory::make()->boot();
     }
 
-    protected function getSerializedModel()
-    {
-        $requestedStory = request()->input('story');
+    // protected function getSerializedModel()
+    // {
+    //     $requestedStory = request()->input('story');
 
-        if(!$requestedStory) return;
+    //     if(!$requestedStory) return;
 
-        return Story::where(
-            'path',
-            'like',
-            "%$requestedStory.story.json"
-        )->first()->content;
-    }
+    //     return Story::where(
+    //         'path',
+    //         'like',
+    //         "%$requestedStory.story.json"
+    //     )->first()->content;
+    // }
 }
