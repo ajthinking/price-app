@@ -9,11 +9,26 @@ class DataStory {
 		return new static;
 	}
 
-	public function run($name) {
-		// return $this->execute('run', [$name]);
-		$ret = exec("node ". $this->path . ' ' . $name . ' 2>&1', $out, $err);
+	public function run($diagram) {
+		exec(
+			"node " .
+			$this->path .
+			' run "' .
+			addslashes($diagram) .
+			'" 2>&1'
+			
+			, $out, $err
+		);
 
-		return json_decode($ret);
+		if($err) {
+			dd('There was an error when running the command', $err);
+		}
+
+		
+
+		$json = implode('', $out);
+
+		return (array) json_decode($json);
 	}
 
 	public function boot() {
@@ -22,15 +37,5 @@ class DataStory {
 		$json = implode('', $out);
 
 		return (array) json_decode($json);
-
-        return [
-            'stories'         => [],
-            'availableNodes'	=> [],
-        ]; 
 	}
-
-	// public function execute($type) {
-	// 	$ret = exec("node ". $this->path . ' ' . $name . ' 2>&1', $out, $err);
-	// 	$value = json_decode($ret);
-	// }
 }

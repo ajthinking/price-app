@@ -2,20 +2,15 @@
 
 namespace App\DataStory\Controllers;
 
+use App\DataStory\DataStory;
 use DataStory\Diagram;
 
 class Run
 {
     public function __invoke()
     {
-        $diagram = Diagram::hydrate(
-            request()->input('model')
-        );
-        
-        $diagram->registerGlobal()->run();
-
-        return [
-            'diagram' => $diagram
-        ];      
+		return DataStory::make()->run(
+			request()->input('model')			
+		);
     }
 }
