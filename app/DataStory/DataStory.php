@@ -3,7 +3,7 @@
 namespace App\DataStory;
 
 class DataStory {
-	protected $path = __DIR__ . '/data-story.js';
+	protected $path = __DIR__ . '/lib/cli/data-story.js';
 
 	public static function make() {
 		return new static;
@@ -17,9 +17,11 @@ class DataStory {
 	}
 
 	public function boot() {
-		$ret = exec("node ". $this->path . ' boot 2>&1', $out, $err);
+		exec("node ". $this->path . ' boot 2>&1', $out, $err);
 
-		dd($out, $err);
+		$json = implode('', $out);
+
+		return (array) json_decode($json);
 
         return [
             'stories'         => [],

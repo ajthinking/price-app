@@ -9,12 +9,10 @@ const ServerNodeFactory_1 = __importDefault(require("../server/ServerNodeFactory
 const type = process.argv[2];
 const args = process.argv.slice(3);
 const boot = () => {
-    return {
-        data: {
-            stories: [],
-            availableNodes: ServerNodeFactory_1.default.all().map(node => (new node()).serialize())
-        }
-    };
+    return JSON.stringify({
+        stories: [],
+        availableNodes: ServerNodeFactory_1.default.all().map(node => (new node()).serialize())
+    });
 };
 const help = () => {
     return 'Please use syntax:\n\n    node data-story.js <ACTION> <DATA>\n\navailable actions [boot, help, run]';
