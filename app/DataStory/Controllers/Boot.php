@@ -2,7 +2,7 @@
 
 namespace App\DataStory\Controllers;
 
-use App\DataStory\DataStoryCli as DataStory;
+use App\DataStory\DataStory;
 
 class Boot
 {

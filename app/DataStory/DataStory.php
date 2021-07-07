@@ -2,7 +2,7 @@
 
 namespace App\DataStory;
 
-class DataStoryCli {
+class DataStory {
 	protected $path = __DIR__ . '/data-story.js';
 
 	public static function make() {
@@ -17,6 +17,10 @@ class DataStoryCli {
 	}
 
 	public function boot() {
+		$ret = exec("node ". $this->path . ' boot 2>&1', $out, $err);
+
+		dd($out, $err);
+
         return [
             'stories'         => [],
             'availableNodes'	=> [],

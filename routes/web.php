@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/pricelist', function () {
+    return [
+		'a' => 123,
+		'b' => 456,
+	];
+});
