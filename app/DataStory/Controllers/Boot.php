@@ -10,17 +10,4 @@ class Boot
     {
 		return DataStory::make()->boot();
     }
-
-    // protected function getSerializedModel()
-    // {
-    //     $requestedStory = request()->input('story');
-
-    //     if(!$requestedStory) return;
-
-    //     return Story::where(
-    //         'path',
-    //         'like',
-    //         "%$requestedStory.story.json"
-    //     )->first()->content;
-    // }
 }
