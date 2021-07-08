@@ -10482,7 +10482,10 @@ var APIClient = /*#__PURE__*/function () {
   }, {
     key: "save",
     value: function save(name, model) {
-      return new Promise(function () {});
+      return axios__WEBPACK_IMPORTED_MODULE_0___default().post(this.root + '/save', {
+        name: name,
+        model: (0,_utils_nonCircularJsonStringify__WEBPACK_IMPORTED_MODULE_1__.nonCircularJsonStringify)(model.serialize())
+      });
     }
   }]);
 
@@ -16280,9 +16283,9 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
   }, {
     key: "bootDemos",
     value: function bootDemos() {
-      for (var _i = 0, _Object$keys = Object.keys(_server_demos_ts__WEBPACK_IMPORTED_MODULE_8__); _i < _Object$keys.length; _i++) {
+      for (var _i = 0, _Object$keys = Object.keys(_server_demos_ts__WEBPACK_IMPORTED_MODULE_8__); _i < _Object$keys.length; _i++) {//this.props.store.metadata.client.save(name, demos[name])
+
         var name = _Object$keys[_i];
-        this.props.store.metadata.client.save(name, _server_demos_ts__WEBPACK_IMPORTED_MODULE_8__[name]);
       } // this.props.store.metadata.client.save('With parameters', demos.WithParameters)
       // this.props.store.metadata.client.save('Working with json', demos.WorkingWithJSON)
       // this.props.store.metadata.client.save('Scraping a map service', demos.ScrapingAMapService)

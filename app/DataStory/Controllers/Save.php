@@ -2,18 +2,18 @@
 
 namespace App\DataStory\Controllers;
 
-use DataStory\Support\SimpleFile;
+use App\DataStory\Models\Story;
 
 class Save
 {
     public function __invoke()
     {
-        $filename = request()->input('filename');
-        $content = request()->input('model');
-    
-        SimpleFile::put(
-            config('data-story.stories-dir') . '/' . $filename . '.story.json',
-            $content
-        );    
+        $name = request()->input('name');
+        $model = request()->input('model');
+
+		Story::updateOrCreate(
+			['name' => $name],
+			['model' => $model]
+		);
     }
 }

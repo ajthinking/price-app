@@ -3,7 +3,6 @@
 namespace App\DataStory\Controllers;
 
 use App\DataStory\DataStory;
-use DataStory\Diagram;
 
 class Run
 {

@@ -17,6 +17,8 @@ class DataStoryServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'data-story');
 
+		$this->loadMigrationsFrom(__DIR__.'/database/migrations');
+
         // $this->publishes([
         //     __DIR__ . '/../../dist' => public_path('vendor/data-story'),
         // ], 'public');

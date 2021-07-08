@@ -1,6 +1,7 @@
 <?php
 
 use App\DataStory\DataStory;
+use App\DataStory\Models\Story;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/pricelist', function () {
-	$result = DataStory::run('my_first_story');
+	$result = Story::first()->run();
 
-	Story::where('name', 'my_first_story')->cli()->run();
+	dd($result);
 });
