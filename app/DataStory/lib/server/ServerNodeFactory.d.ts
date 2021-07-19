@@ -11,6 +11,7 @@ import Evaluate from './nodes/Evaluate';
 import FilterDuplicates from './nodes/FilterDuplicates';
 import Flatten from './nodes/Flatten';
 import Group from './nodes/Group';
+import HTTPRequest from './nodes/HTTPRequest';
 import Inspect from './nodes/Inspect';
 import Log from './nodes/Log';
 import Map from './nodes/Map';
@@ -36,6 +37,7 @@ export default class ServerNodeFactory {
         FilterDuplicates: typeof FilterDuplicates;
         Flatten: typeof Flatten;
         Group: typeof Group;
+        HTTPRequest: typeof HTTPRequest;
         Inspect: typeof Inspect;
         Log: typeof Log;
         Map: typeof Map;
@@ -47,7 +49,7 @@ export default class ServerNodeFactory {
         ThrowError: typeof ThrowError;
     };
     static find(type: string): any;
-    static all(): (typeof Aggregate | typeof Clone_ | typeof Comment | typeof Create | typeof CreateGrid | typeof CreateAttribute | typeof CreateCSV | typeof CreateJSON | typeof CreateSequence | typeof Evaluate | typeof FilterDuplicates | typeof Flatten | typeof Group | typeof Inspect | typeof Log | typeof Map | typeof OutputProvider | typeof RegExpFilter | typeof Sample | typeof Sort | typeof Sleep | typeof ThrowError)[];
+    static all(): (typeof Aggregate | typeof Clone_ | typeof Comment | typeof Create | typeof CreateGrid | typeof CreateAttribute | typeof CreateCSV | typeof CreateJSON | typeof CreateSequence | typeof Evaluate | typeof FilterDuplicates | typeof Flatten | typeof Group | typeof HTTPRequest | typeof Inspect | typeof Log | typeof Map | typeof OutputProvider | typeof RegExpFilter | typeof Sample | typeof Sort | typeof Sleep | typeof ThrowError)[];
     static make(type: string): any;
     static hydrate(node: SerializedNodeModel, diagram?: any): any;
 }

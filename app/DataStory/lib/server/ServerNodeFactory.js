@@ -19,7 +19,7 @@ const Evaluate_1 = __importDefault(require("./nodes/Evaluate"));
 const FilterDuplicates_1 = __importDefault(require("./nodes/FilterDuplicates"));
 const Flatten_1 = __importDefault(require("./nodes/Flatten"));
 const Group_1 = __importDefault(require("./nodes/Group"));
-// import HTTPRequest from './nodes/HTTPRequest'
+const HTTPRequest_1 = __importDefault(require("./nodes/HTTPRequest"));
 const Inspect_1 = __importDefault(require("./nodes/Inspect"));
 const Log_1 = __importDefault(require("./nodes/Log"));
 const Map_1 = __importDefault(require("./nodes/Map"));
@@ -65,7 +65,7 @@ ServerNodeFactory.nodes = {
     FilterDuplicates: FilterDuplicates_1.default,
     Flatten: Flatten_1.default,
     Group: Group_1.default,
-    // HTTPRequest,
+    HTTPRequest: HTTPRequest_1.default,
     Inspect: Inspect_1.default,
     Log: Log_1.default,
     Map: Map_1.default,
