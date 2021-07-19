@@ -4,6 +4,8 @@ namespace App\DataStory;
 
 use Illuminate\Support\Facades\Http;
 
+// TODO
+// Put this in a script: https://getcomposer.org/doc/articles/scripts.md
 class Installer
 {
 		const api = 'https://api.github.com/';
